@@ -1,0 +1,14 @@
+import dayjs from "dayjs"
+
+const boton = document.getElementById("ua")
+const input = document.getElementById("texto")
+const lista = document.getElementById("lista")
+boton.addEventListener("click", guardarPlan)
+
+function guardarPlan() {
+    const fecha = dayjs().format("DD/MM/YYY HH:mm")
+    const li = document.createElement("li")
+    li.textContent = input.value + "-" + fecha
+    lista.appendChild(li)
+    input.value = ""
+}
